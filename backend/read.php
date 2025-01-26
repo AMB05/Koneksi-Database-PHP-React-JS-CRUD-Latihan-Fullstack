@@ -1,0 +1,13 @@
+<?php
+    include 'db.php';
+
+    $result = $conn->query("SELECT * FROM items");
+    $items = [];
+    while ($row = $result->fetch_assoc()) {
+        $items[] = $row;
+    }
+    echo json_encode($items);
+    $conn->close();
+?>
+
+
